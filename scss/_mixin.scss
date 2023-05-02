@@ -1,0 +1,26 @@
+// RWD
+@mixin mobile {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+
+// component
+@mixin btn--start {
+  border-radius: $main-radius;
+  border: 1px solid $black-0;
+  background-color: $black-100;
+  color: $black-0;
+  padding: 20px 40px;
+  font-size: 20px;
+}
+
+// animation
+@keyframes arrow {
+  from {
+    top: 120%;
+  }
+  to {
+    top: -120%;
+  }
+}

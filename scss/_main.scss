@@ -1,0 +1,517 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid $black-0;
+  margin-bottom: 40px;
+  @include mobile {
+    padding: 28px 0;
+  }
+  &__logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    @include mobile {
+      gap: 9.6px;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 160px;
+  @include mobile {
+    margin-bottom: 120px;
+  }
+  &__title {
+    margin-bottom: 40px;
+  }
+  &__btn {
+    @include btn--start;
+    margin-bottom: 100px;
+    @include mobile {
+      margin-bottom: 180px;
+    }
+  }
+  &__animation {
+    width: 540px;
+    height: 180px;
+    align-self: flex-end;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: rows;
+  }
+  &__fragment {
+    position: absolute;
+    animation-name: arrow;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.5s;
+    &:nth-child(2) {
+      left: 180px;
+      animation-delay: 1s;
+    }
+    &:nth-child(3) {
+      right: 0px;
+      animation-delay: 1.5s;
+    }
+  }
+}
+
+.intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 80px;
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 48px;
+  }
+  &__title {
+    width: 33.3%;
+    @include mobile {
+      width: 100%;
+    }
+  }
+  &__content {
+    width: 67%;
+    @include mobile {
+      width: 100%;
+    }
+  }
+}
+
+.card-collection {
+  display: flex;
+  flex-direction: row;
+  justify-self: space-between;
+  gap: 24px;
+  margin-bottom: 160px;
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 120px;
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: $main-radius;
+    border: 1px solid $black-80;
+    padding: 80px 40px;
+    width: 33.3%;
+    gap: 20px;
+    @include mobile {
+      padding: 40px 20px;
+      width: 100%;
+    }
+  }
+}
+
+.partner {
+  margin-bottom: 160px;
+  @include mobile {
+    margin-bottom: 120px;
+  }
+  h6 {
+    margin-bottom: 80px;
+    @include mobile {
+      margin-bottom: 24px;
+    }
+  }
+  &__box {
+    margin-bottom: 160px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 196px;
+      height: 100%;
+      background: $shadow-linear;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 10;
+      height: 100%;
+      width: 196px;
+      top: 0;
+      right: 0;
+      background: $shadow-linear;
+      transform: rotate(-180deg);
+    }
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow: scroll;
+    &:first-child {
+      margin-bottom: 20px;
+    }
+  }
+  &__item-top {
+    img:nth-child(1) {
+      margin-left: 118px;
+    }
+  }
+
+  &__card-collection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 24px;
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba($color: $black-0, $alpha: 0.08);
+    border-radius: $main-radius;
+    width: 33.3%;
+    padding: 40px;
+    gap: 20px;
+    @include mobile {
+      width: 100%;
+    }
+  }
+  &__star {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+  }
+  &__comment {
+    flex-basis: 215px;
+    @include mobile {
+      flex-basis: 144px;
+    }
+  }
+  &__people {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.application {
+  background-color: $black-0;
+  border-radius: 160px;
+  padding: 160px 0;
+  margin-bottom: 80px;
+  overflow: hidden;
+  @include mobile {
+    border-radius: 20px;
+    margin-bottom: 40px;
+    padding: 80px 0;
+  }
+  h3,
+  h7,
+  p,
+  a {
+    color: $black-100;
+  }
+  &__title {
+    margin-bottom: 80px;
+    @include mobile {
+      margin-bottom: 32px;
+    }
+  }
+  &__search {
+    display: block;
+    width: 100%;
+    padding: 20px 76px;
+    border-radius: $main-radius;
+    background-color: $black-20;
+    margin-bottom: 24px;
+    color: $black-60;
+    position: relative;
+    &::before {
+      content: "";
+      background: url("../img/icon16/search.svg") no-repeat;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 23px;
+      left: 43px;
+      // vertical-align: middle;
+    }
+    @include mobile {
+      margin-bottom: 16px;
+    }
+  }
+  &__input {
+    outline: none;
+    border: none;
+    background-color: $black-20;
+    font-size: 16px;
+  }
+  &__navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    @include mobile {
+      flex-wrap: wrap;
+    }
+  }
+  &__filter {
+    position: relative;
+    padding: 20px 60px 20px 40px;
+    border-radius: $main-radius;
+    border: 1px solid $black-20;
+    @include mobile {
+      order: 1;
+    }
+    &::after {
+      content: "";
+      width: 100%;
+      height: 16px;
+      background: url("../img/icon16/filter.svg") no-repeat;
+      position: absolute;
+      top: 25px;
+      // top: 50%;
+      // transform: translateY(-35%);
+      margin-left: 12px;
+    }
+    select {
+      appearance: none;
+      background-color: transparent;
+      outline: none;
+      font-size: 16px;
+      border: none;
+    }
+  }
+  // 感覺在定位 after y 軸可以更好的做法
+  &__timer {
+    position: relative;
+    padding: 20px 60px 20px 40px;
+    border-radius: $main-radius;
+    border: 1px solid $black-20;
+    @include mobile {
+      order: 2;
+    }
+    &::after {
+      content: "";
+      width: 100%;
+      height: 16px;
+      background: url("../img/icon16/timer.svg") no-repeat;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-20%);
+      margin-left: 12px;
+    }
+    select {
+      appearance: none;
+      background-color: transparent;
+      outline: none;
+      font-size: 16px;
+      border: none;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: center;
+    gap: 8px;
+    overflow: scroll;
+    white-space: nowrap;
+    @include mobile {
+      order: 3;
+      margin-top: 16px;
+    }
+  }
+  &__list-item {
+    padding: 8px 16px;
+    a {
+      color: $black-60;
+    }
+    // 感覺可以更好的做法
+    &:first-child {
+      font-weight: 700;
+      border-radius: $main-radius;
+      background-color: $black-20;
+      a {
+        color: $black-100;
+      }
+    }
+    &:hover {
+      font-weight: 700;
+      border-radius: $main-radius;
+      background-color: $black-20;
+      a {
+        color: $black-100;
+      }
+    }
+  }
+  &__card-collection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 40px;
+    @include mobile {
+      margin-bottom: 32px;
+    }
+    &__card {
+      border-radius: $main-radius;
+      border: 1px solid $black-20;
+      overflow: hidden;
+      width: 416px;
+      // img {
+      //   width: 100%;
+      // }
+    }
+    &__title {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid $black-20;
+      gap: 12px;
+      p {
+        flex-basis: 42px;
+      }
+    }
+    &__content {
+      display: flex;
+      flex-direction: rows;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid $black-20;
+      p:first-child {
+        font-weight: 700;
+      }
+    }
+    &__content:last-child {
+      border-bottom: none;
+    }
+  }
+  &__pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 4px;
+    @include mobile {
+      justify-content: center;
+    }
+    li {
+      width: 48px;
+      height: 48px;
+      border-radius: $main-radius;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        background: $black-100 center center;
+        a {
+          color: $black-0;
+        }
+      }
+      &:first-child {
+        background: $black-100 center center;
+        a {
+          color: $black-0;
+        }
+      }
+      &:last-child {
+        a {
+          width: 16px;
+          height: 16px;
+          vertical-align: middle;
+          background: url("../img/icon16/next.svg") no-repeat center center;
+        }
+      }
+      a {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.start {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 0;
+  @include mobile {
+    gap: 32px;
+    padding: 120px 75.5px;
+  }
+  &__btn {
+    @include btn--start;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.pricing {
+  padding: 80px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid $black-60;
+  border-bottom: 1px solid $black-60;
+}
+
+.footer {
+  font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0;
+  order: 1;
+  @include mobile {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  p {
+    padding: 12px 0;
+    margin-right: 100px;
+  }
+  &__social {
+    display: flex;
+    flex-direction: row;
+    padding: 12px 0;
+    gap: 20px;
+    order: 2;
+    @include mobile {
+      order: 3;
+    }
+  }
+  &__to-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    order: 3;
+    padding: 12px 0;
+    margin-left: auto;
+    @include mobile {
+      order: 2;
+    }
+  }
+}
